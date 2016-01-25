@@ -4,6 +4,8 @@ module.exports = {
       '<%= general.tempDir %>/libs.js': appendLibsPath([
         'jquery/dist/jquery.js',
         'angular/angular.js',
+        'angular-route/angular-route.js',
+        'angular-resource/angular-resource.js',
         'lodash/lodash.js',
       ])
     }
