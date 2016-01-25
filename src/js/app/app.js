@@ -18,7 +18,24 @@ eventApp = angular.module('eva', ['ngRoute', 'ngResource']);
               redirectTo: '/'
             });
       }
-    ])
+    ]).run(['$rootScope',
+        '$document',
+        '$timeout',
+        function ($rootScope, $document, $timeout) {
+          watchDigest();
+
+          function watchDigest () {
+            var unregister = $rootScope.$watch(function(){
+              console.log('digest-end');
+              unregister();
+
+              $timeout(function(){
+                $rootScope.$emit('digest-end');
+                watchDigest();
+              },0,false);
+            });
+          }
+      }]);
 })();
 
 
