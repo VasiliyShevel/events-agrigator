@@ -1,3 +1,3 @@
 module.exports = function (grunt) {
-  grunt.registerTask('build', ['concat']);
+  grunt.registerTask('build', ['concat','copy:html']);
 };

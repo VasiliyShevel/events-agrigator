@@ -1,9 +1,0 @@
-extends layout
-
-block content
-    h1= title
-    p Welcome to #{title}
-    div(ng-controller="GeneratorController as gen")
-        ul
-            li(ng-repeat="item in gen.generatedList")
-                span {{item.id}}
